@@ -53,8 +53,6 @@ public:
     virtual inline Node* childPtr(bool r) = 0;
     virtual inline void createChild(bool r) = 0;
     virtual inline void refreshNode() = 0;
-    //friend inline auto mulOp(auto, auto);
-    //friend inline auto addOp(auto, auto);
 };
 
 /*
@@ -345,38 +343,4 @@ T SegmentTree<T>::QueryValue(int RangeLeft, int RangeRight, int Option)
             return queryMax(treeRoot, leftBorder, rightBorder);
     }
     return infval+2; // Error query
-}
-
-long long a[100005];
-
-int main()
-{
-    int n, m;
-    scanf("%d%d%*d", &n, &m);
-    for(int i = 1; i <= n; i += 1)
-        scanf("%lld", &a[i]);
-    SegmentTree<long long> Seg1(a+1, a+n+1);
-    int op, x, y;
-    long long z;
-    for(int i = 1; i <= m; i += 1)
-    {
-        scanf("%d", &op);
-        if(op == 1)
-        {
-            scanf("%d%d%lld", &x, &y, &z);
-            //updateMul(rootSeg, 1, n, x, y, z);
-            Seg1.UpdateValue(x, y, z, 2);
-        }
-        else if(op == 2)
-        {
-            scanf("%d%d%lld", &x, &y, &z);
-            Seg1.UpdateValue(x, y, z, 1);
-        }
-        else
-        {
-            scanf("%d%d", &x, &y);
-            printf("%lld\n", Seg1.QueryValue(x, y, 1));
-        }
-    }
-    return 0;
 }
