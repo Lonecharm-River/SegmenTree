@@ -33,7 +33,7 @@ The two member functions `UpdateValue` and `QueryValue` have some options to cho
 The following program will show you how to create a segment tree and use it to maintain your data.
 
 ```cpp
-// Paste the whole code in here from my github program "SegmentTree.cpp"
+// Paste the whole code here from my github program "SegmentTree.cpp"
 
 int main()
 {
