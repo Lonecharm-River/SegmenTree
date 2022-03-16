@@ -41,7 +41,6 @@ It is designed to be a part of segment tree, binary tree or something else
 template <class T=int>
 class Node
 {
-protected:
 public:
     T valSum, valMin, valMax;
     T lazyAdd, lazyMul;
@@ -70,8 +69,10 @@ public:
     inline void createChild(bool r) {}
     inline void refreshNode() {}
 };
-imaginaryNode<long long> nullLikeNode;
-Node<long long> *EndNode = &nullLikeNode;
+imaginaryNode<int> nullLikeNode;
+const Node<int> *ptrEndNode = &nullLikeNode;
+
+#define EndNode (Node<T> *)ptrEndNode
 
 /*
 Class realNode is the real unit in those trees
@@ -110,7 +111,7 @@ inline void realNode<T>::refreshNode()
 }
 
 template <class T=int>
-class SegmentTree : public realNode<T>
+class SegmentTree
 {
 private:
     Node<T>* treeRoot;
