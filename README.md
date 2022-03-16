@@ -20,4 +20,4 @@ The `EndNode` cannot change its type while you create different type of segment 
 
 After that, Some data protection problems are also about to be done.
 
-All of these are just my non-matual try, please forgive me if you find that there are too many problems here.
+All of these are just my immature try, please forgive me if you find that there are too many problems here.
